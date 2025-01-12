@@ -4,6 +4,14 @@ const MAX_BUTTONS = 7
 const SCRAMBLE_INTERVAL = 2000
 const BUTTON_HEIGHT = "5em"
 const BUTTON_WIDTH = "10em"
+const PINK = "#FFC1CC"
+const LIGHT_BLUE = "#A7C7E7"
+const LIGHT_GREEN = "#B2F2BB"
+const LAVENDER = "#E6E6FA"
+const PEACH = "#FFDAB9"
+const LEMON = "#FFFACD"
+const YELLOW = "#FCE883"
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const label = document.getElementById("labelText")
@@ -89,15 +97,7 @@ class Button {
 class GameManager {
     constructor() {
         this.validator = new Validator(MIN_BUTTONS, MAX_BUTTONS)
-        this.originalColors = [
-            "#FFC1CC", 
-            "#A7C7E7", 
-            "#B2F2BB", 
-            "#E6E6FA", 
-            "#FFDAB9", 
-            "#FFFACD", 
-            "#FCE883"  
-            ]
+        this.originalColors = [PINK, LIGHT_BLUE, LIGHT_GREEN, LAVENDER, PEACH, LEMON, YELLOW]
         this.colors = [...this.originalColors]
         this.buttons = []
         this.isGameOver = false
@@ -202,5 +202,3 @@ class GameManager {
         })
     }
 }
-
-
