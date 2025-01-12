@@ -1,3 +1,8 @@
+/** 
+ * THis code was partially reviewed with ChatGPT
+ * 
+*/
+
 import { messages } from "../lang/messages/en/user.js";
 const MIN_BUTTONS = 3
 const MAX_BUTTONS = 7
