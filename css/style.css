@@ -17,10 +17,7 @@ form {
 }
 
 #buttonContainer {
-    /* display: flex; */
     position: relative;
-    gap: 10px;
-    flex-wrap: wrap;
 }
 
 #messageContainer {
