@@ -19,17 +19,26 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function saveNotes() {
-    const notes = Array.from(document.querySelectorAll("textarea")).map(textarea => textarea.value)
+    const notes = Array.from(document.querySelectorAll("textarea")).map(textarea => {
+        return {
+            id: textarea.dataset.id,
+            text: textarea.value
+        }
+    })
     let jsonNotes = JSON.stringify(notes)
     localStorage.setItem("notes", jsonNotes)
+
+    // console.log("Saved Notes:", notes)
 
     const saveTime = new Date().toLocaleTimeString()
     document.getElementById("saveTime").textContent = `${messages.STORED_AT}: ${saveTime}`
 }
 
+let noteIdCounter = 1
 class Note {
     constructor(container) {
         this.container = container
+        this.id = noteIdCounter++
         this.wrapper = null
         this.createNote()
     }
@@ -39,6 +48,7 @@ class Note {
 
         const textArea = document.createElement("textarea")
         textArea.className = "form-control"
+        textArea.dataset.id = this.id
 
         const removeBtn = document.createElement("button")
         removeBtn.textContent = messages.REMOVE
