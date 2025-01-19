@@ -15,7 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
     addBtn.addEventListener("click", () => {
         const note = new Note(notesContainer)
     })
+    setInterval(saveNotes, 2000)
 })
+
+function saveNotes() {
+    const notes = Array.from(document.querySelectorAll("textarea")).map(textarea => textarea.value)
+    let jsonNotes = JSON.stringify(notes)
+    localStorage.setItem("notes", jsonNotes)
+
+    const saveTime = new Date().toLocaleTimeString()
+    document.getElementById("saveTime").textContent = `${messages.STORED_AT}: ${saveTime}`
+}
 
 class Note {
     constructor(container) {
@@ -46,6 +56,7 @@ class Note {
     removeNote() {
         if (this.wrapper) {
             this.wrapper.remove()
+            saveNotes()
         }
     }
 }

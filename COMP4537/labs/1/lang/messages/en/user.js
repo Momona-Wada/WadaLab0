@@ -6,6 +6,6 @@ export const messages = {
     ADD: "add",
     REMOVE: "remove",
     BACK: "<<< Back",
-    STORED_AT: "stored at:",
+    STORED_AT: "stored at",
     UPDATED_AT: "updated at"
 }
