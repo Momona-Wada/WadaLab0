@@ -5,6 +5,7 @@ export const messages = {
     GO_TO_READER_PAGE: "Go to Reader page",
     ADD: "add",
     REMOVE: "remove",
+    BACK: "<<< Back",
     STORED_AT: "stored at:",
     UPDATED_AT: "updated at"
 }
