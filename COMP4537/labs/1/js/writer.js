@@ -4,17 +4,20 @@
 import { messages } from "../lang/messages/en/user.js"
 
 document.addEventListener("DOMContentLoaded", () => {
-    const addBtn = document.getElementById("addButton")
-    addBtn.textContent = messages.ADD
-
-    const backBtn = document.getElementById("backButton")
-    backBtn.textContent = messages.BACK
-
+    const addBtnContainer = document.getElementById("addButton")
+    const backBtnContainer = document.getElementById("backButton")
     const notesContainer = document.getElementById("notesContainer")
 
-    addBtn.addEventListener("click", () => {
+    const addBtn = new Button(addBtnContainer, messages.ADD, "btn-btn-primary")
+    addBtn.addClickListener(() => {
         const note = new Note(notesContainer)
     })
+
+    const backBtn = new Button(backBtnContainer, messages.BACK, "btn-danger")
+    backBtn.addClickListener(() => {
+        location.href = "index.html"
+    })
+
     setInterval(saveNotes, 2000)
 })
 
@@ -69,4 +72,25 @@ class Note {
             saveNotes()
         }
     }
+}
+
+class Button {
+    constructor(container, label, className) {
+        this.container = container
+        this.label = label
+        this.className = className
+        this.button = null
+        this.createButton()
+    }
+
+    createButton() {
+        this.button = document.createElement("div")
+        this.button.textContent = this.label
+        this.button.className = this.className
+        this.container.appendChild(this.button)
+    }
+
+    addClickListener(callback) {
+        this.button.addEventListener("click", callback)
+    } 
 }
