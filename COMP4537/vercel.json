@@ -1,7 +1,7 @@
 {
     "rewrites": [
         {
-            "source": "/COMP4537/labs/:path*",
+            "source": "/labs/:path*",
             "destination": "/COMP4537/labs/:path*"
         }
     ]
