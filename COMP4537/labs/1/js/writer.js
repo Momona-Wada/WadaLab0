@@ -2,13 +2,14 @@
 * This code is partially reviewed with ChatGPT
 */
 import { messages } from "../lang/messages/en/user.js"
+import { Button } from "./button.js"
 
 document.addEventListener("DOMContentLoaded", () => {
     const addBtnContainer = document.getElementById("addButton")
     const backBtnContainer = document.getElementById("backButton")
     const notesContainer = document.getElementById("notesContainer")
 
-    const addBtn = new Button(addBtnContainer, messages.ADD, "btn-btn-primary")
+    const addBtn = new Button(addBtnContainer, messages.ADD, "btn-primary")
     addBtn.addClickListener(() => {
         const note = new Note(notesContainer)
     })
@@ -16,6 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const backBtn = new Button(backBtnContainer, messages.BACK, "btn-danger")
     backBtn.addClickListener(() => {
         location.href = "index.html"
+    })
+
+    const savedNotes = JSON.parse(localStorage.getItem("notes")) || []
+    savedNotes.forEach(noteData => {
+        const note = new Note(notesContainer)
+        note.wrapper.querySelector("textarea").value = noteData.text
+        note.wrapper.querySelector("textarea").dataset.id = noteData.id
     })
 
     setInterval(saveNotes, 2000)
@@ -30,8 +38,6 @@ function saveNotes() {
     })
     let jsonNotes = JSON.stringify(notes)
     localStorage.setItem("notes", jsonNotes)
-
-    // console.log("Saved Notes:", notes)
 
     const saveTime = new Date().toLocaleTimeString()
     document.getElementById("saveTime").textContent = `${messages.STORED_AT}: ${saveTime}`
@@ -74,23 +80,3 @@ class Note {
     }
 }
 
-class Button {
-    constructor(container, label, className) {
-        this.container = container
-        this.label = label
-        this.className = className
-        this.button = null
-        this.createButton()
-    }
-
-    createButton() {
-        this.button = document.createElement("div")
-        this.button.textContent = this.label
-        this.button.className = this.className
-        this.container.appendChild(this.button)
-    }
-
-    addClickListener(callback) {
-        this.button.addEventListener("click", callback)
-    } 
-}

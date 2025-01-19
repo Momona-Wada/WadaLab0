@@ -2,11 +2,15 @@
 * This code is partially reviewed with ChatGPT
 */
 import { messages } from "../lang/messages/en/user.js"
+import { Button } from "./button.js"
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const backBtn = document.getElementById("backButton")
-    backBtn.textContent = messages.BACK
+    const backBtnContainer = document.getElementById("backButton")
+    const backBtn = new Button(backBtnContainer, messages.BACK, "btn-danger")
+    backBtn.addClickListener(() => {
+        location.href = "index.html"
+    })
 
     showSavedNotes()
 
