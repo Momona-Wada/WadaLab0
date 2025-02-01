@@ -4,10 +4,5 @@
             "source": "/COMP4537/labs/:path*",
             "destination": "/labs/:path*"
         }
-    ],
-    "functions": {
-        "labs/3/server.js": {
-            "runtime": "nodejs18.x"
-        }
-    }
+    ]
 }
