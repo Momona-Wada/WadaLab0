@@ -1,14 +1,15 @@
-// const http = require("http")
+const http = require("http")
 const url = require("url")
 const path = require("path")
 const fs = require("fs")
 const utils = require("./modules/utils")
 
-const filePath = path.join(__dirname, "../../locals/en/en.json")
+const PORT = process.env.PORT || 3000
 
+const filePath = path.join(__dirname, "../../locals/en/en.json")
 const messages = JSON.parse(fs.readFileSync(filePath, "utf8"))
 
-module.exports = (req, res) => {
+const server = http.createServer((req, res) => {
     const queryObject = url.parse(req.url, true).query
     if (req.url.startsWith("/labs/3/getDate/")) {
         const name = queryObject.name || "Guest"
@@ -24,4 +25,8 @@ module.exports = (req, res) => {
         res.writeHead(404, {"Content-Type": "text/html"})
         res.end("404 Not Found")
     }
-}
+})
+
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`)
+})
