@@ -3,6 +3,15 @@
         {
             "source": "/COMP4537/labs/:path*",
             "destination": "/labs/:path*"
+        },
+        {
+            "source": "/labs/3/getDate/:match*",
+            "destination": "/comp4537/labs/3/server.js"
         }
-    ]
+    ],
+    "functions": {
+        "comp4537/labs/3/server.js": {
+        "runtime": "nodejs18.x"
+        }
+    }
 }
