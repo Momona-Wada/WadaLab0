@@ -4,5 +4,18 @@
             "source": "/COMP4537/labs/:path*",
             "destination": "/labs/:path*"
         }
+    ],
+    "version": 2,
+    "builds": [
+        {
+            "src": "labs/3/server.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/labs/3/getDate",
+            "dest": "labs/3/server.js"
+        }
     ]
 }
