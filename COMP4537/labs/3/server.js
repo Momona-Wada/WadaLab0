@@ -10,7 +10,7 @@ const messages = JSON.parse(fs.readFileSync(filePath, "utf8"))
 
 module.exports = (req, res) => {
     const queryObject = url.parse(req.url, true).query
-    if (req.url.startsWith("/COMP4537/labs/3/getDate/")) {
+    if (req.url.startsWith("/labs/3/getDate/")) {
         const name = queryObject.name
         const date = utils.getDate()
 
