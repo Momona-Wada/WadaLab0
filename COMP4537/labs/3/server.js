@@ -4,11 +4,11 @@ const path = require("path")
 const fs = require("fs")
 const utils = require("./modules/utils")
 
-const filePath = path.join(__dirname, "locals/en/en.json")
+const filePath = path.join(__dirname, "../../locals/en/en.json")
 
 const messages = JSON.parse(fs.readFileSync(filePath, "utf8"))
 
-const server = http.createServer((req, res) => {
+module.exports = (req, res) => {
     const queryObject = url.parse(req.url, true).query
     if (req.url.startsWith("/COMP4537/labs/3/getDate/")) {
         const name = queryObject.name
@@ -24,8 +24,8 @@ const server = http.createServer((req, res) => {
         res.writeHead(400, {"Content-Type": "text/html"})
         res.end("404 Not Found")
     }
-})
+}
 
-server.listen(8080, () => {
-    console.log("Server is listening 8080")
-})
+// server.listen(8080, () => {
+//     console.log("Server is listening 8080")
+// })
