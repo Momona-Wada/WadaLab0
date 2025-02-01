@@ -11,7 +11,7 @@ const messages = JSON.parse(fs.readFileSync(filePath, "utf8"))
 
 const server = http.createServer((req, res) => {
     const queryObject = url.parse(req.url, true).query
-    if (req.url.startsWith("/labs/3/getDate/")) {
+    if (req.url.startsWith("/labs/3/getDate")) {
         const name = queryObject.name || "Guest"
         const date = utils.getDate()
 

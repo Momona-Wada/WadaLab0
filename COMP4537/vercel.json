@@ -8,12 +8,20 @@
     ],
     "rewrites": [
         {
+            "source": "/labs/3/getDate",
+            "destination": "/labs/3/server.js"
+        },
+        {
             "source": "/COMP4537/labs/:path*",
             "destination": "/labs/:path*"
         },
         {
-            "source": "/labs/3/getDate",
-            "destination": "/labs/3/server.js"
+            "source": "/labs/:path*",
+            "destination": "/labs/:path*"
+        },
+        {
+            "source": "/",
+            "destination": "/index.html"
         }
     ]
 }
