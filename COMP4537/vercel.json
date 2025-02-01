@@ -1,10 +1,4 @@
 {
-    "rewrites": [
-        {
-            "source": "/COMP4537/labs/:path*",
-            "destination": "/labs/:path*"
-        }
-    ],
     "version": 2,
     "builds": [
         {
@@ -12,10 +6,14 @@
             "use": "@vercel/node"
         }
     ],
-    "routes": [
+    "rewrites": [
         {
-            "src": "/labs/3/getDate",
-            "dest": "labs/3/server.js"
+            "source": "/COMP4537/labs/:path*",
+            "destination": "/labs/:path*"
+        },
+        {
+            "source": "/labs/3/getDate",
+            "destination": "/labs/3/server.js"
         }
     ]
 }
