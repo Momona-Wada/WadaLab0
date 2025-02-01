@@ -1,4 +1,4 @@
-const http = require("http")
+// const http = require("http")
 const url = require("url")
 const path = require("path")
 const fs = require("fs")
@@ -11,7 +11,7 @@ const messages = JSON.parse(fs.readFileSync(filePath, "utf8"))
 module.exports = (req, res) => {
     const queryObject = url.parse(req.url, true).query
     if (req.url.startsWith("/labs/3/getDate/")) {
-        const name = queryObject.name
+        const name = queryObject.name || "Guest"
         const date = utils.getDate()
 
         const responseMessage = messages.greeting
