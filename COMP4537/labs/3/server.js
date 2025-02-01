@@ -25,7 +25,3 @@ module.exports = (req, res) => {
         res.end("404 Not Found")
     }
 }
-
-// server.listen(8080, () => {
-//     console.log("Server is listening 8080")
-// })
