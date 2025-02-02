@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Momona-Wada/comp4537-server.git"
+    "url": "git+https://github.com/Momona-Wada/WadaLab0.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Momona-Wada/comp4537-server/issues"
+    "url": "https://github.com/Momona-Wada/WadaLab0.git/issues"
   },
-  "homepage": "https://github.com/Momona-Wada/comp4537-server#readme",
+  "homepage": "https://github.com/Momona-Wada/WadaLab0.git#readme",
   "description": "",
   "engines": {
     "node": "18.x"
