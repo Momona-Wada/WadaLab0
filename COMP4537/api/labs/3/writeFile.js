@@ -3,7 +3,6 @@ const path = require("path")
 const url = require("url")
 const { messages } = require("./lang/messages/en/user")
 
-const PORT = process.env.PORT || 3000
 
 class FileWriter {
     constructor(filename) {
@@ -39,16 +38,9 @@ module.exports = async (req, res) => {
         await fileWriter.appendText(text);
         res.writeHead(200, {"Content-Type": "text/html"});
         res.end(messages.TEXT_APPENDED_SUCCESSFULLY);
-    } catch {
+    } catch (err) {
+        console.error("Error appending text:", err)
         res.writeHead(500, {"Content-Type": "text/html"});
         res.end(messages.INTERNAL_SERVER_ERROR);
     }
-    
 }
-
-// if (process.env.NODE_ENV !== 'production') {
-//     const PORT = process.env.PORT || 3000;
-//     http.createServer(module.exports).listen(PORT, () => {
-//         console.log(`Server is running on port ${PORT}`);
-//     });
-// }
