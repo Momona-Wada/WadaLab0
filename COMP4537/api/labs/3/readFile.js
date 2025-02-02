@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
         const data = await fileReader.readFile();
         res.writeHead(200, {"Content-Type": "text/html"});
         res.end(`<p>${data}</p>`);
-    } catch {
+    } catch(err) {
         console.log("Error reading file:", err)
         res.writeHead(404, {"Content-Type": "text/html"});
         res.end(messages.FILE_NOT_FOUND);
