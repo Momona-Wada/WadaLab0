@@ -1,0 +1,27 @@
+body, button, input {
+    font-family: Arial, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#inputSection {
+    padding-bottom: 10px;
+}
+
+#buttonContainer {
+    position: relative;
+}
+
+#messageContainer {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
