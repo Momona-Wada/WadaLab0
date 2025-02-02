@@ -7,7 +7,8 @@ const { messages } = require("./lang/messages/en/user")
 
 class FileWriter {
     constructor(filename) {
-        this.filePath = path.resolve(__dirname, filename);
+        this.filePath = path.join("/tmp", filename);
+        console.log("File path resolved to:", this.filePath);
     }
 
     appendText(text) {
