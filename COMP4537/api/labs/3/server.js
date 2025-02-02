@@ -2,7 +2,7 @@ const http = require("http")
 const url = require("url")
 const path = require("path")
 const fs = require("fs")
-const utils = require("./modules/utils")
+const utils = require(path.join(__dirname, "modules", "utils"));
 
 const PORT = process.env.PORT || 3000
 
