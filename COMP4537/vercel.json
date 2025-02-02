@@ -3,6 +3,10 @@
         {
             "source": "/COMP4537/labs/:path*",
             "destination": "/labs/:path*"
+        },
+        {
+            "source": "/labs/3/getDate",
+            "destination": "/api/labs/3/server.js"
         }
     ]
 }
