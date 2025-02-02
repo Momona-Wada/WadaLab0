@@ -36,10 +36,10 @@ module.exports = async (req, res) => {
     
     try {
         await fileWriter.appendText(text);
-        res.writeHead(200, {"Content-Type": "text.html"});
+        res.writeHead(200, {"Content-Type": "text/html"});
         res.end(messages.TEXT_APPENDED_SUCCESSFULLY);
     } catch {
-        res.writeHead(500, {"Context-Type": "text/html"});
+        res.writeHead(500, {"Content-Type": "text/html"});
         res.end(messages.INTERNAL_SERVER_ERROR);
     }
     
