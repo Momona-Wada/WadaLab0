@@ -1,8 +1,8 @@
 {
     "rewrites": [
         {
-            "source": "/COMP4537/labs/:path*",
-            "destination": "/labs/:path*"
+            "source": "/",
+            "destination": "/index.html"
         },
         {
             "source": "/labs/3/getDate",
