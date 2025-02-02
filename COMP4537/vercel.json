@@ -9,11 +9,11 @@
             "destination": "/api/labs/3/server.js"
         },
         {
-            "source": "/labs/3/writeFile",
+            "source": "/labs/3/appendToFile",
             "destination": "/api/labs/3/writeFile.js"
         },
         {
-            "source": "/labs/3/readFile",
+            "source": "/labs/3/displayFileContents",
             "destination": "/api/labs/3/readFile.js"
         }
     ]
