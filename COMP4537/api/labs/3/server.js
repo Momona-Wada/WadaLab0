@@ -6,7 +6,7 @@ const utils = require("./modules/utils")
 
 const PORT = process.env.PORT || 3000
 
-const filePath = path.resolve(process.cwd(), "locals/en/en.json");
+const filePath = path.resolve(__dirname, "../../../locals/en/en.json");
 const messages = JSON.parse(fs.readFileSync(filePath, "utf8"))
 
 module.exports = (req, res) => {
