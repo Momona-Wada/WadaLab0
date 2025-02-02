@@ -4,9 +4,11 @@ const url = require("url")
 const path = require("path")
 const fs = require("fs")
 const utils = require("./modules/utils")
+const { userMessages } = require("./lang/messages/en/user")
 
 const filePath = path.resolve(__dirname, "../../../locals/en/en.json");
 const messages = JSON.parse(fs.readFileSync(filePath, "utf8"))
+
 
 module.exports = (req, res) => {
     const parsedUrl = url.parse(req.url, true);
@@ -24,7 +26,7 @@ module.exports = (req, res) => {
         res.end(`<div style="color: blue;">${responseMessage}</div>`);
     } else {
         res.writeHead(404, { "Content-Type": "text/html" });
-        res.end("404 Not Found");
+        res.end(userMessages.NOT_FOUND);
     }
 };
 
