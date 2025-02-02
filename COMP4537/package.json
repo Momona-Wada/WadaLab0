@@ -20,5 +20,8 @@
   "description": "",
   "engines": {
     "node": "18.x"
+  },
+  "dependencies": {
+    "firebase": "^11.2.0"
   }
 }
