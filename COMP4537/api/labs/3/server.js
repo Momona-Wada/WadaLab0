@@ -22,7 +22,10 @@ module.exports = (req, res) => {
             .replace("%NAME%", name)
             .replace("%DATE%", date);
 
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, { 
+            "Content-Type": "text/html",
+            "Access-Control-Allow-Origin": "*"
+        });
         res.end(`<div style="color: blue;">${responseMessage}</div>`);
     } else {
         res.writeHead(404, { "Content-Type": "text/html" });
