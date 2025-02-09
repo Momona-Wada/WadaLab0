@@ -11,6 +11,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const addWordSuccessMessage = document.getElementById("successMessageContainer")
     const addWordFailMessage = document.getElementById("failMessageContainer")
 
+    const addANewWord = document.getElementById("addANewWord")
+    addANewWord.textContent = messages.ADD_A_NEW_WORD
+
+    const word = document.getElementById("word")
+    word.textContent = messages.WORD
+
+    const definition = document.getElementById("definition")
+    definition.textContent = messages.DEFINITION
+
+    const addButtonText = document.getElementById("addButton")
+    addButtonText.textContent = messages.ADD_BUTTON
+
+    const goToSearchPageText = document.getElementById("goToSearch")
+    goToSearchPageText.textContent = messages.GO_TO_SEARCH_PAGE
+
     addButton.addEventListener("click", function() {
         const word = wordInput.value.trim()
         const definition = definitionInput.value.trim()

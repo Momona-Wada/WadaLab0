@@ -1,5 +1,9 @@
 export const messages = {
-
+    ADD_A_NEW_WORD: "Add a New Word",
+    WORD: "Word",
+    DEFINITION: "Definition",
+    ADD_BUTTON: "Add!",
+    GO_TO_SEARCH_PAGE: "🔍 Go to Search Page",
     MISSING_WORD: "Please enter a valid word",
     MISSING_DEFINITION: "Please enter a definition",
     NOT_FOUND: "Not Found",

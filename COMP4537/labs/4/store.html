@@ -9,25 +9,25 @@
 <body>
     <div class="container">
         <div class="card p-4 m-4">
-            <h2 class="text-center mb-3">Add a New Word</h2>
+            <h2 class="text-center mb-3" id="addANewWord"></h2>
             
             <div class="mb-3">
-                <label class="form-label">Word</label>
+                <label class="form-label" id="word"></label>
                 <input type="text" class="form-control" id="wordInput" placeholder="Enter a word">
                 <div id="wordErrorMessageContainer" class="text-danger"></div>
             </div>
             
             <div class="mb-3">
-                <label class="form-label">Definition</label>
+                <label class="form-label" id="definition"></label>
                 <textarea class="form-control" id="definitionInput" rows="3" placeholder="Enter the definition"></textarea>
                 <div id="definitionErrorMessageContainer" class="text-danger"></div>
             </div>
-            <button type="button" class="btn btn-info btn-add">Add!</button>
+            <button type="button" class="btn btn-info btn-add" id="addButton"></button>
             <div id="successMessageContainer" class="text-success"></div>
             <div id="failMessageContainer" class="text-danger"></div>
         </div>
         <div class="text-center mt-4">
-            <a href="./search.html" class="btn btn-outline-primary btn-lg px-4">🔍 Go to Search Page</a>
+            <a href="./search.html" class="btn btn-outline-primary btn-lg px-4" id="goToSearch"></a>
         </div>
     </div>
     <script type="module" src="store.js"></script>
