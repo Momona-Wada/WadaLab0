@@ -7,12 +7,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultWord = document.getElementById("resultWord")
     const resultDefinition = document.getElementById("resultDefinition")
     const resultRequestNumber = document.getElementById("resultRequestNum")
+    const errorMessage = document.getElementById("errorMessageContainer")
 
     searchButton.addEventListener("click", function() {
         const word = wordInput.value.trim()
+        errorMessage.innerText = ""
 
         if (!word) {
-            resultDefinition.innerText = messages.MISSING_WORD
+            errorMessage.innerText = messages.MISSING_WORD
             return
         }
 
@@ -54,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 resultRequestNumber.innerText = `${messages.REQUEST_NUM} ${response.numberOfRequests}`;
                 resultWord.innerText = messages.NOT_FOUND;
                 resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`;
+                wordInput.value = ""
             }
             else {
                 resultWord.innerText = messages.ERROR;
