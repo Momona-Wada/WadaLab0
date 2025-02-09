@@ -1,4 +1,4 @@
-export const messages = {
+const messages = {
 
     MISSING_WORD: "Please enter a valid word",
     MISSING_WORD_OR_DEFINITION: "Please enter a valid word and definition",
@@ -9,4 +9,8 @@ export const messages = {
     ERROR: "Error",
     FAILED_TO_GET_DEFINITION: "Failed to receive the definition",
     FAILED_TO_ADD_WORD: "Failed to add the word"
+}
+
+module.exports = {
+    messages
 }
