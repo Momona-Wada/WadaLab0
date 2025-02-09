@@ -11,14 +11,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const addWordSuccessMessage = document.getElementById("successMessageContainer")
     const addWordFailMessage = document.getElementById("failMessageContainer")
 
-    const addANewWord = document.getElementById("addANewWord")
-    addANewWord.textContent = messages.ADD_A_NEW_WORD
+    const title = document.getElementById("titleStore")
+    title.textContent = messages.STORE_TITLE
 
-    const word = document.getElementById("word")
-    word.textContent = messages.WORD
+    const addANewWordText = document.getElementById("addANewWord")
+    addANewWordText.textContent = messages.ADD_A_NEW_WORD
 
-    const definition = document.getElementById("definition")
-    definition.textContent = messages.DEFINITION
+    const wordText = document.getElementById("word")
+    wordText.textContent = messages.WORD
+
+    const definitionText = document.getElementById("definition")
+    definitionText.textContent = messages.DEFINITION
 
     const addButtonText = document.getElementById("addButton")
     addButtonText.textContent = messages.ADD_BUTTON

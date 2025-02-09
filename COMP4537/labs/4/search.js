@@ -9,6 +9,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultRequestNumber = document.getElementById("resultRequestNum")
     const errorMessage = document.getElementById("errorMessageContainer")
 
+    const title = document.getElementById("titleSearch")
+    title.textContent = messages.SEARCH_TITLE
+
+    const searchForWordText = document.getElementById("searchWord")
+    searchForWordText.textContent = messages.SEARCH_FOR_WORD
+
+    const wordText = document.getElementById("word")
+    wordText.textContent = messages.WORD
+
+    const searchButtonText = document.getElementById("searchButton")
+    searchButtonText.textContent = messages.SEARCH_BUTTON
+
+    const goToStorePageText = document.getElementById("goToStore")
+    goToStorePageText.textContent = messages.GO_TO_STORE_PAGE
+
     searchButton.addEventListener("click", function() {
         const word = wordInput.value.trim()
         errorMessage.innerText = ""
