@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         const xhttp = new XMLHttpRequest()
-        xhttp.open("GET", `https://?word=${word}`, true)
+        xhttp.open("GET", `https://oyster-app-ysyip.ondigitalocean.app/COMP4537/labs/4/api/definitions?word=${word}`, true)
 
         xhttp.onreadystatechange = function () {
             if (xhttp.readyState === 4 && xhttp.status == 200) {
