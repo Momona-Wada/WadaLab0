@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", function() {
     searchButton.addEventListener("click", function() {
         const word = wordInput.value.trim()
         errorMessage.innerText = ""
+        resultWord.innerText = "";
+        resultDefinition.innerText = "";
+        resultRequestNumber.innerText = "";
+        resultArea.classList.add("d-none");
 
         if (!word) {
             errorMessage.innerText = messages.MISSING_WORD
