@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 resultArea.classList.remove("d-none")
                 
-                if (response.status !== "success") {
+                if (response.status == "success") {
                     const definition = response.message
                     
                     if (!definition || definition.trim() === "") {
