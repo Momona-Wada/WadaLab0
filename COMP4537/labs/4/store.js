@@ -6,13 +6,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const wordInput = document.getElementById("wordInput")
     const definitionInput = document.getElementById("definitionInput")
     const addButton = document.querySelector(".btn-add")
+    const missingWord = document.getElementById("wordErrorMessageContainer")
+    const missingDefinition = document.getElementById("definitionErrorMessageContainer")
 
     addButton.addEventListener("click", function() {
         const word = wordInput.value.trim()
         const definition = definitionInput.value.trim()
 
-        if (!word || !definition) {
-            alert(messages.MISSING_WORD_OR_DEFINITION)
+        if (!word) {
+            missingWord.innerText = messages.MISSING_WORD
+            return
+        }
+
+        if (!definition) {
+            missingDefinition.innerText = messages.MISSING_DEFINITION
             return
         }
 

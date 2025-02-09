@@ -1,7 +1,7 @@
 export const messages = {
 
     MISSING_WORD: "Please enter a valid word",
-    MISSING_WORD_OR_DEFINITION: "Please enter a valid word and definition",
+    MISSING_DEFINITION: "Please enter a definition",
     NOT_FOUND: "Not Found",
     IS_NOT_IN_DICTIONARY: "is not in this dictionary",
     WORD: "Word",
