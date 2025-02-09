@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
     addButton.addEventListener("click", function() {
         const word = wordInput.value.trim()
         const definition = definitionInput.value.trim()
+        
+        if (!word && !definition) {
+            missingWord.innerText = messages.MISSING_WORD
+            missingDefinition.innerText = messages.MISSING_DEFINITION
+            return
+        }
 
         if (!word) {
             missingWord.innerText = messages.MISSING_WORD
@@ -22,13 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
             missingDefinition.innerText = messages.MISSING_DEFINITION
             return
         }
-
-        if (!word && !definition) {
-            missingWord.innerText = messages.MISSING_WORD
-            missingDefinition.innerText = messages.MISSING_DEFINITION
-            return
-        }
-
         // const data = JSON.stringify({word, definition})
         // console.log(data)
 
