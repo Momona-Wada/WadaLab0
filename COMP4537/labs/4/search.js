@@ -1,4 +1,4 @@
-const {messages} = require("./lang/message/en/user.js")
+import { messages } from "./lang/message/en/user.js";
 
 document.addEventListener("DOMContentLoaded", function() {
     const wordInput = document.getElementById("wordInput")

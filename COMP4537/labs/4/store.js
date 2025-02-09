@@ -1,5 +1,5 @@
 // This code is assisted by chatGPT
-const {messages} = require("./lang/message/en/user.js")
+import { messages } from "./lang/message/en/user.js";
 
 
 document.addEventListener("DOMContentLoaded", function() {
