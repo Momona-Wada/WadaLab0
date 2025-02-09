@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             if (xhttp.status == 200) {
                 const response = JSON.parse(xhttp.responseText)
+                console.log(response)
 
                 resultArea.classList.remove("d-none")
     
