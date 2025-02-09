@@ -36,9 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 const definition = response.message
                 if (!definition || definition.trim() === "") {
-                    
-                }
-                else if (!response.definition || response.definition.trim() === "") {
                     resultWord.innerText = messages.NOT_FOUND
                     resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`
                 } 
