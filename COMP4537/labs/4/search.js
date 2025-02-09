@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultArea = document.getElementById("resultArea")
     const resultWord = document.getElementById("resultWord")
     const resultDefinition = document.getElementById("resultDefinition")
+    const resultRequestNumber = document.getElementById("resultRequestNum")
 
     searchButton.addEventListener("click", function() {
         const word = wordInput.value.trim()
@@ -47,8 +48,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             else if (xhttp.status === 404) {
                 resultArea.classList.remove("d-none");
+                resultRequestNumber.innerText = response.numberOfRequests
                 resultWord.innerText = messages.NOT_FOUND;
-                resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`;
+                resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`
             }
             else {
                 resultWord.innerText = messages.ERROR;
