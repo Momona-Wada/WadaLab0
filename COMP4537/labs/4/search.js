@@ -47,10 +47,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
             else if (xhttp.status === 404) {
+                const response = JSON.parse(xhttp.responseText)
+                console.log(response)
+
                 resultArea.classList.remove("d-none");
-                resultRequestNumber.innerText = response.numberOfRequests
+                resultRequestNumber.innerText = `${messages.REQUEST_NUM} ${response.numberOfRequests}`;
                 resultWord.innerText = messages.NOT_FOUND;
-                resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`
+                resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`;
             }
             else {
                 resultWord.innerText = messages.ERROR;

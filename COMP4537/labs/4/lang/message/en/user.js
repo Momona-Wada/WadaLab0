@@ -8,5 +8,6 @@ export const messages = {
     DEFINITION: "Definition",
     ERROR: "Error",
     FAILED_TO_GET_DEFINITION: "Failed to receive the definition",
-    FAILED_TO_ADD_WORD: "Failed to add the word"
+    FAILED_TO_ADD_WORD: "Failed to add the word",
+    REQUEST_NUM: "Request #"
 }
