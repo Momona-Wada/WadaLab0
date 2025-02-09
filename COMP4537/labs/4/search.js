@@ -1,4 +1,4 @@
-import { messages } from "./lang/message/en/user.js"
+const {messages} = require("./lang/message/en/user.js")
 
 document.addEventListener("DOMContentLoaded", function() {
     const wordInput = document.getElementById("wordInput")
@@ -19,7 +19,11 @@ document.addEventListener("DOMContentLoaded", function() {
         xhttp.open("GET", `https://oyster-app-ysyip.ondigitalocean.app/COMP4537/labs/4/api/definitions?word=${word}`, true)
 
         xhttp.onreadystatechange = function () {
-            if (xhttp.readyState === 4 && xhttp.status == 200) {
+            if (xhttp.readyState !== 4) {
+                return
+            } 
+            
+            if (xhttp.status == 200) {
                 const response = JSON.parse(xhttp.responseText)
 
                 resultArea.classList.remove("d-none")
@@ -35,7 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     resultWord.innerText = `${messages.WORD}: ${word}`
                     resultDefinition.innerText = `${messages.DEFINITION}: ${response.definition}`
                 }
-            } else {
+            }
+            else {
                 resultWord.innerText = messages.ERROR
                 resultDefinition.innerText = messages.FAILED_TO_GET_DEFINITION
             }

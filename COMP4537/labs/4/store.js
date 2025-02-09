@@ -1,5 +1,5 @@
 // This code is assisted by chatGPT
-import { messages } from "./lang/message/en/user.js"
+const {messages} = require("./lang/message/en/user.js")
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -25,7 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         xhttp.onreadystatechange = function () {
-            if (xhttp.readyState == 4 && xhttp.status == 200){
+            if (xhttp.readyState !== 4) {
+                return
+            }
+            if(xhttp.status === 200)
+                {
                 const response = JSON.parse(xhttp.responseText)
                 alert(response.message)
                 wordInput.value = ""
