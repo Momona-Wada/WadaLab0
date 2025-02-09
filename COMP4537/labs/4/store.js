@@ -23,6 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
             return
         }
 
+        if (!word && !definition) {
+            missingWord.innerText = messages.MISSING_WORD
+            missingDefinition.innerText = messages.MISSING_DEFINITION
+            return
+        }
+
         // const data = JSON.stringify({word, definition})
         // console.log(data)
 
