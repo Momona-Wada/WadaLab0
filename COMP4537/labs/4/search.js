@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`
                 } 
                 else {
-                    resultWord.innerText = `${messages.WORD}: ${word}`
-                    resultDefinition.innerText = `${messages.DEFINITION}: ${definition}`
+                    resultWord.innerText = word
+                    resultDefinition.innerText = definition
                 }
             }
             else {
