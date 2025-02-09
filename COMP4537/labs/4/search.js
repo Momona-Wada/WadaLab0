@@ -30,23 +30,29 @@ document.addEventListener("DOMContentLoaded", function() {
                 resultArea.classList.remove("d-none")
                 
                 if (response.status !== "success") {
+                    const definition = response.message
+                    
+                    if (!definition || definition.trim() === "") {
+                        resultWord.innerText = messages.NOT_FOUND
+                        resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`
+                    } 
+                    else {
+                        resultWord.innerText = word
+                        resultDefinition.innerText = definition
+                    }
+                } else {
                     resultWord.innerText = messages.NOT_FOUND
                     resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`
-                    return
-                }
-                const definition = response.message
-                if (!definition || definition.trim() === "") {
-                    resultWord.innerText = messages.NOT_FOUND
-                    resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`
-                } 
-                else {
-                    resultWord.innerText = word
-                    resultDefinition.innerText = definition
                 }
             }
+            else if (xhttp.status === 404) {
+                resultArea.classList.remove("d-none");
+                resultWord.innerText = messages.NOT_FOUND;
+                resultDefinition.innerText = `${word} ${messages.IS_NOT_IN_DICTIONARY}`;
+            }
             else {
-                resultWord.innerText = messages.ERROR
-                resultDefinition.innerText = messages.FAILED_TO_GET_DEFINITION
+                resultWord.innerText = messages.ERROR;
+                resultDefinition.innerText = messages.FAILED_TO_GET_DEFINITION;
             }
         }
         xhttp.send()
