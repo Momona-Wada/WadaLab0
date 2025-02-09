@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const addButton = document.querySelector(".btn-add")
     const missingWord = document.getElementById("wordErrorMessageContainer")
     const missingDefinition = document.getElementById("definitionErrorMessageContainer")
+    const addWordSuccessMessage = document.getElementById("successMessageContainer")
+    const addWordFailMessage = document.getElementById("failMessageContainer")
 
     addButton.addEventListener("click", function() {
         const word = wordInput.value.trim()
@@ -45,11 +47,11 @@ document.addEventListener("DOMContentLoaded", function() {
             if(xhttp.status === 200)
                 {
                 const response = JSON.parse(xhttp.responseText)
-                alert(response.message)
+                addWordSuccessMessage.innerText = response.message
                 wordInput.value = ""
                 definitionInput.value = ""
             } else {
-                alert(messages.FAILED_TO_ADD_WORD)
+                addWordFailMessage.innerText = messages.FAILED_TO_ADD_WORD
             }
         }
         const data = JSON.stringify({"word": word, "definition": definition})
