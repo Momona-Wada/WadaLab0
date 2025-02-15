@@ -8,5 +8,8 @@ export const messages = {
     INSERT_PATIENT_DATA: "Insert Patients' Data",
     SUBMIT: "Submit",
     SELECT_OR_INSERT: "Enter SELECT or INSERT query",
-    EXECUTE_QUERY: "Execute Query"
+    EXECUTE_QUERY: "Execute Query",
+    UNABLE_TO_INSERT_DATA: "Error: Unable to insert data. Please try again.",
+    UNABLE_TO_FETCH_DATA: "Error: Unable to fetch data. Please try again.",
+    INVALID_REQUEST: "Only SELECT and INSERT queries are allowed."
 }
