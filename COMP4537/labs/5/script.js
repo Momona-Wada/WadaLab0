@@ -1,3 +1,4 @@
+// This code is assisted by chatGPT
 import { messages } from "./lang/message/en/user.js";
 
 document.addEventListener("DOMContentLoaded", () => {
