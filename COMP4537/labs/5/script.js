@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const SERVER_URL = "https://oyster-app-ysyip.ondigitalocean.app/COMP4537/labs/5/api/v1/sql/"
 
     samplePatientsText.value = Object.entries(messages.SAMPLE_PATIENTS)
-        .map(([name, dob]) => `${name}: ${dob}`)
+        .map(([name, dob]) => `('${name}', '${dob}')`)
         .join("\n")
 
     insertPatientsDataText.textContent = messages.INSERT_PATIENT_DATA
@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     document.getElementById("insertBtn").addEventListener("click", () => {
         const samplePatientsData = Object.entries(messages.SAMPLE_PATIENTS)
-            .map((([name, dob]) => (`${name}, ${dob}`)))
+            .map(([name, dob]) => `('${name}', '${dob}')`)
             .join(",")
 
-        const query = `INSERT INTO patient (name, dob) VALUES ${samplePatientsData};`
-
+        const query = `INSERT INTO patients (name, dateOfBirth) VALUES ${samplePatientsData};`
+        console.log(JSON.stringify({query}))
         fetch(SERVER_URL, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
                     responseArea.textContent = messages.UNABLE_TO_FETCH_DATA
                 })
         } else if (query.toUpperCase().startsWith("INSERT")) {
+            console.log(JSON.stringify({query}))
             fetch(SERVER_URL, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
