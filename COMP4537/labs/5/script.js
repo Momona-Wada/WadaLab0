@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
             .map((([name, dob]) => (`${name}, ${dob}`)))
             .join(",")
 
-        const query = `INSERT INTO patients (name, dob) VALUES ${samplePatientsData};`
+        const query = `INSERT INTO patient (name, dob) VALUES ${samplePatientsData};`
 
         fetch(SERVER_URL, {
             method: "POST",
