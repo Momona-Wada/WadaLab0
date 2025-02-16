@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         const query = document.getElementById("queryInput").value.trim()
 
         if (query.toUpperCase().startsWith("SELECT")) {
-            fetch(`${SERVER_URL}/${encodeURIComponent(query)}`)
+            fetch(`${SERVER_URL}?query=${encodeURIComponent(query)}`)
                 .then(response => response.text())
                 .then(data => {
                     responseAreaContainer.classList.remove("d-none")
